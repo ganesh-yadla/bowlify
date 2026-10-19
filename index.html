@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bowlify — Handcrafted Fresh Fruit & Açai Bowls Delivered in 30 Mins</title>
+    <meta name="description" content="India's clean-label fresh fruit bowl delivery. 100% real fruit, zero preservatives, no added sugar. Delivered cold in 30 minutes across Bengaluru, Mumbai & Delhi-NCR." />
+    
+    <!-- Google Fonts: Fraunces (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Top Banner -->
+    <div class="announcement-bar" id="announcement-bar">
+      <div class="announcement-inner">
+        <span class="announcement-pill">First Order Special</span>
+        <span class="announcement-text">Enjoy <strong>50% off</strong> with code <span class="promo-tag">FRESH50</span></span>
+        <span class="bullet">•</span>
+        <span class="announcement-text">Free insulated delivery on orders above ₹499</span>
+      </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header" id="header">
+      <div class="header-container">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-logo" id="brand-logo" aria-label="Bowlify Home">
+          <svg class="brand-svg-mark" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 0 0-10 10c0 4.4 3 8 7 9.5v-3.5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3.5c4-1.5 7-5.1 7-9.5A10 10 0 0 0 12 2z"/>
+            <path d="M12 12c-2.5 0-4-1.5-4-3.5S10 5 12 5s4 1.5 4 3.5-1.5 3.5-4 3.5z"/>
+          </svg>
+          <div class="brand-name">
+            <span class="brand-title">Bowlify</span>
+            <span class="brand-sub">KITCHEN & COLD LAB</span>
+          </div>
+        </a>
+
+        <!-- City / Location Selector -->
+        <div class="location-picker" id="btn-change-address" role="button" tabindex="0" title="Select location">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <div class="location-details">
+            <span class="location-caption">Delivering in 30 mins to</span>
+            <span class="location-city" id="current-city-label">Indiranagar, Bengaluru</span>
+          </div>
+          <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="nav-menu" id="nav-menu">
+          <a href="#menu" class="nav-link">Signature Menu</a>
+          <a href="#custom-builder" class="nav-link">Build Your Bowl</a>
+          <a href="#subscriptions" class="nav-link">Daily Subscriptions</a>
+          <a href="#sourcing" class="nav-link">Our Sourcing</a>
+        </nav>
+
+        <!-- Search & Cart Actions -->
+        <div class="header-actions">
+          <div class="search-box">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="global-search-input" placeholder="Search açaí, berries, mango..." aria-label="Search bowls" />
+          </div>
+
+          <button class="cart-trigger" id="btn-open-cart" aria-label="View bag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-label">Bag</span>
+            <span class="cart-counter" id="cart-item-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="hero-section" id="hero">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <div class="hero-eyebrow">
+              <span class="status-indicator"></span> Fresh Farm-Direct Fruit Kitchen
+            </div>
+            <h1 class="hero-title">
+              Whole fruits. Raw superfoods. <br />
+              <em>Zero artificial shortcuts.</em>
+            </h1>
+            <p class="hero-description">
+              Handcrafted açaí, pitaya, and probiotic yogurt bowls prepared to order with farm-harvested fruits from Mahabaleshwar and Ratnagiri. Delivered chilled at 4°C in 30 minutes.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#menu" class="btn btn-dark" id="btn-hero-order">Order Signature Bowls</a>
+              <a href="#custom-builder" class="btn btn-secondary" id="btn-hero-builder">Customise Your Bowl</a>
+            </div>
+
+            <!-- Value Props Row -->
+            <div class="hero-pillars">
+              <div class="pillar">
+                <span class="pillar-title">30 Mins</span>
+                <span class="pillar-sub">Cold-chain insulated</span>
+              </div>
+              <div class="pillar-divider"></div>
+              <div class="pillar">
+                <span class="pillar-title">100% Real</span>
+                <span class="pillar-sub">0 added white sugar</span>
+              </div>
+              <div class="pillar-divider"></div>
+              <div class="pillar">
+                <span class="pillar-title">Clean Label</span>
+                <span class="pillar-sub">Compostable packaging</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-image-card">
+              <img src="/images/hero_bowl.jpg" alt="Signature Amazonian Açai Bliss" class="hero-bowl-img" id="hero-featured-img" />
+              <div class="hero-image-overlay">
+                <div class="overlay-details">
+                  <span class="item-tag">CHEF'S SIGNATURE</span>
+                  <h3 class="item-title">Amazonian Açai Bliss</h3>
+                  <p class="item-meta">Mahabaleshwar strawberries, blueberries, Alphonso mango & Nilgiri honey</p>
+                </div>
+                <div class="overlay-price-action">
+                  <span class="item-price">₹329</span>
+                  <button class="btn btn-sm btn-white" id="btn-hero-add-signature">+ Add to Bag</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clean Trust Strip -->
+      <section class="trust-strip">
+        <div class="trust-container">
+          <div class="trust-item">
+            <span class="trust-icon">🌱</span>
+            <div class="trust-text">
+              <strong>Farm Direct Sourcing</strong>
+              <span>Picked within 48 hours from certified growers</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">❄️</span>
+            <div class="trust-text">
+              <strong>Sub-Zero Thermal Fleet</strong>
+              <span>Arrives thick, creamy and icy fresh</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🥥</span>
+            <div class="trust-text">
+              <strong>Zero Single-Use Plastic</strong>
+              <span>Upcycled coconut shell & sugarcane bagasse bowls</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🛡️</span>
+            <div class="trust-text">
+              <strong>FSSAI Certified Kitchens</strong>
+              <span>Strict hygiene standards & temperature logging</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Signature Menu Section -->
+      <section class="menu-section" id="menu">
+        <div class="section-wrapper">
+          <div class="section-title-bar">
+            <div>
+              <span class="section-kicker">CURATED RECIPES</span>
+              <h2 class="section-heading">Signature Fresh Bowls</h2>
+              <p class="section-lead">Nutrient-dense recipes balanced for healthy breakfast, post-workout fuel, and clean snacks.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="category-tabs" id="category-filters">
+              <button class="tab-btn active" data-category="all" id="filter-all">All Recipes</button>
+              <button class="tab-btn" data-category="acai" id="filter-acai">Açai Classics</button>
+              <button class="tab-btn" data-category="tropical" id="filter-tropical">Tropical & Pitaya</button>
+              <button class="tab-btn" data-category="protein" id="filter-protein">High Protein (15g+)</button>
+              <button class="tab-btn" data-category="detox" id="filter-detox">Green Detox</button>
+            </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div class="product-cards-grid" id="product-grid">
+            <!-- Dynamically populated from products.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Custom Bowl Studio -->
+      <section class="builder-section" id="custom-builder">
+        <div class="section-wrapper">
+          <div class="builder-intro">
+            <span class="section-kicker">MADE TO YOUR SPECIFICATION</span>
+            <h2 class="section-heading">Build Your Own Bowl</h2>
+            <p class="section-lead">Select your freshly prepared smoothie base, seasonal fruit slices, crunchy superfoods, and artisanal nut butters.</p>
+          </div>
+
+          <div class="builder-layout">
+            <!-- Customizer Left: Steps -->
+            <div class="builder-steps-column">
+              <!-- Steps Tab Navigation -->
+              <div class="steps-nav" id="builder-step-tabs">
+                <button class="step-nav-btn active" data-step="bases" id="tab-bases">
+                  <span class="step-index">1</span>
+                  <span class="step-label">Base</span>
+                </button>
+                <button class="step-nav-btn" data-step="fruits" id="tab-fruits">
+                  <span class="step-index">2</span>
+                  <span class="step-label">Fresh Fruit</span>
+                </button>
+                <button class="step-nav-btn" data-step="crunches" id="tab-crunches">
+                  <span class="step-index">3</span>
+                  <span class="step-label">Crunch & Seeds</span>
+                </button>
+                <button class="step-nav-btn" data-step="drizzles" id="tab-drizzles">
+                  <span class="step-index">4</span>
+                  <span class="step-label">Drizzle</span>
+                </button>
+              </div>
+
+              <!-- Options Grid for current step -->
+              <div class="ingredients-grid" id="builder-options-grid">
+                <!-- Dynamically populated via JS -->
+              </div>
+            </div>
+
+            <!-- Customizer Right: Summary Card -->
+            <div class="builder-summary-column">
+              <div class="summary-card">
+                <div class="summary-card-header">
+                  <h3>Your Custom Creation</h3>
+                  <span class="custom-badge">Crafted Fresh</span>
+                </div>
+
+                <!-- Clean Plate Diagram & Layer Pills -->
+                <div class="custom-bowl-card">
+                  <div class="dish-preview" id="bowl-dish-preview">
+                    <span class="dish-base-title" id="bowl-base-label">Brazilian Açaí Sorbet</span>
+                  </div>
+                  <div class="dish-ingredients-pills" id="dish-ingredients-pills">
+                    <!-- Updated by JS -->
+                  </div>
+                </div>
+
+                <!-- Nutrition & Macro Specs -->
+                <div class="macro-row">
+                  <div class="macro-cell">
+                    <span class="macro-value" id="builder-calories">130</span>
+                    <span class="macro-unit">Calories</span>
+                  </div>
+                  <div class="macro-cell">
+                    <span class="macro-value" id="builder-ingredients-count">1</span>
+                    <span class="macro-unit">Ingredients</span>
+                  </div>
+                  <div class="macro-cell highlight-cell">
+                    <span class="macro-value" id="builder-price">₹169</span>
+                    <span class="macro-unit">Total</span>
+                  </div>
+                </div>
+
+                <!-- Ingredient Itemized Breakdown -->
+                <div class="ingredient-breakdown" id="builder-summary-list">
+                  <!-- Dynamically rendered -->
+                </div>
+
+                <button class="btn btn-dark btn-block" id="btn-add-custom-bowl">
+                  <span>Add Custom Bowl to Bag</span>
+                  <span class="cta-price" id="builder-cta-price">₹169</span>
+                </button>
+
+                <p class="prep-note">✓ Freshly sliced right before dispatch</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Subscriptions Section -->
+      <section class="subscriptions-section" id="subscriptions">
+        <div class="section-wrapper">
+          <div class="subscription-banner">
+            <div class="subscription-text">
+              <span class="section-kicker">DAILY MORNING PASS</span>
+              <h2 class="sub-heading">Daily Fruit Delivery on Autopilot</h2>
+              <p class="sub-paragraph">
+                Join our morning subscription club for guaranteed 8:00 AM delivery. Ideal for office breakfast and pre-workout nutrition. Save up to 25% with zero delivery fees.
+              </p>
+
+              <ul class="sub-checklist">
+                <li><span>✓</span> Scheduled 8:00 AM morning arrival</li>
+                <li><span>✓</span> Complimentary cold-chain delivery on all days</li>
+                <li><span>✓</span> Skip, swap flavors, or pause anytime with zero penalty</li>
+              </ul>
+            </div>
+
+            <div class="subscription-cards">
+              <div class="plan-card">
+                <span class="plan-type">WEEKDAY PASS</span>
+                <h4>5 Days / Week</h4>
+                <p class="plan-cost"><strong>₹249</strong> <span>/ bowl</span></p>
+                <span class="plan-saving">Save 20% vs single orders</span>
+                <button class="btn btn-outline btn-block btn-subscribe" data-plan="5day">Select 5-Day Plan</button>
+              </div>
+
+              <div class="plan-card featured-plan">
+                <span class="plan-tag">POPULAR</span>
+                <span class="plan-type">EVERYDAY GLOW</span>
+                <h4>7 Days / Week</h4>
+                <p class="plan-cost"><strong>₹229</strong> <span>/ bowl</span></p>
+                <span class="plan-saving">Save 25% + Free Weekend Cold Jar</span>
+                <button class="btn btn-dark btn-block btn-subscribe" data-plan="7day">Select 7-Day Plan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sourcing & Kitchen Standards -->
+      <section class="sourcing-section" id="sourcing">
+        <div class="section-wrapper">
+          <div class="sourcing-intro text-center">
+            <span class="section-kicker">OUR STANDARDS</span>
+            <h2 class="section-heading">How We Keep It Fresh</h2>
+            <p class="section-lead">From certified farms across India to temperature-controlled kitchens.</p>
+          </div>
+
+          <div class="standards-grid">
+            <div class="standard-box">
+              <div class="standard-num">01</div>
+              <h3>Cold Direct Supply Chain</h3>
+              <p>We work with berry growers in Mahabaleshwar and mango orchards in Ratnagiri. Fruits are transported in refrigerated vehicles within 48 hours of picking.</p>
+            </div>
+            <div class="standard-box">
+              <div class="standard-num">02</div>
+              <h3>Zero Concentrates & Refined Sugar</h3>
+              <p>Our smoothie purees are 100% whole fruits without added fructose, corn syrup, or fruit purees from concentrate. Natural sweetness only.</p>
+            </div>
+            <div class="standard-box">
+              <div class="standard-num">03</div>
+              <h3>Prepared Cold to Order</h3>
+              <p>Bowls are blended and fruits are sliced after your order is confirmed. Our kitchen maintains a constant chilled prep zone to prevent oxidation.</p>
+            </div>
+            <div class="standard-box">
+              <div class="standard-num">04</div>
+              <h3>100% Compostable Packaging</h3>
+              <p>Our bowls are molded from fallen coconut husks and sugarcane bagasse. Certified home-compostable with FSC birchwood spoons.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand-pane">
+          <div class="footer-logo">
+            <span class="brand-title">Bowlify</span>
+            <span class="brand-sub">KITCHEN & COLD LAB</span>
+          </div>
+          <p class="footer-bio">
+            Clean-label fresh fruit and açaí bowls crafted on-demand. Nutritious food without compromises.
+          </p>
+          <div class="fssai-indicator">
+            <span class="fssai-logo">FSSAI Lic. No. 11224333000841</span>
+            <span class="fssai-status">Central Certified Kitchen</span>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#menu">Açai Bowls</a></li>
+            <li><a href="#menu">Pitaya & Tropical</a></li>
+            <li><a href="#menu">High Protein Bowls</a></li>
+            <li><a href="#custom-builder">Custom Bowl Studio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Delivery Cities</h4>
+          <ul>
+            <li><span>Bengaluru (Indiranagar, Koramangala, HSR, Whitefield)</span></li>
+            <li><span>Mumbai (Bandra, BKC, Juhu, Powai)</span></li>
+            <li><span>Delhi-NCR (Gurugram, South Delhi)</span></li>
+            <li><span>Hyderabad (Gachibowli, Jubilee Hills)</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col newsletter-pane">
+          <h4>Fresh Drop Updates</h4>
+          <p>Seasonal fruit drops and clean eating guides.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to Bowlify Club! Coupon code FRESH50 applied to your profile.');">
+            <input type="email" placeholder="Enter your email" required aria-label="Your email" />
+            <button type="submit" class="btn btn-dark btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        <p>&copy; 2026 Bowlify Nutrition Pvt Ltd. All rights reserved.</p>
+        <div class="footer-meta-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Nutritional Information</a>
+          <a href="#">Kitchen Hygiene Protocol</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SLIDING CART DRAWER -->
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag">
+      <div class="cart-drawer-header">
+        <div class="cart-title-info">
+          <h3>Your Fresh Bag</h3>
+          <span class="item-count-chip" id="drawer-items-count">0 items</span>
+        </div>
+        <button class="btn-close-drawer" id="btn-close-cart" aria-label="Close cart">&times;</button>
+      </div>
+
+      <!-- Free Delivery Meter -->
+      <div class="shipping-meter" id="shipping-tracker">
+        <div class="meter-text" id="tracker-msg">Add ₹150 more for <strong>FREE Delivery</strong></div>
+        <div class="meter-track">
+          <div class="meter-bar" id="shipping-progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items -->
+      <div class="cart-items-container" id="cart-items-list">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Cart Footer & Checkout Action -->
+      <div class="cart-drawer-footer">
+        <div class="coupon-row">
+          <input type="text" id="promo-input" placeholder="Enter coupon code (e.g. FRESH50)" />
+          <button type="button" class="btn btn-sm btn-outline" id="btn-apply-promo">Apply</button>
+        </div>
+        <div id="promo-status-msg" class="promo-feedback"></div>
+
+        <div class="bill-summary">
+          <div class="bill-row">
+            <span>Item Subtotal</span>
+            <span id="cart-subtotal">₹0</span>
+          </div>
+          <div class="bill-row discount-text" id="discount-row" style="display: none;">
+            <span>Discount (<span id="discount-label">Coupon</span>)</span>
+            <span id="cart-discount">-₹0</span>
+          </div>
+          <div class="bill-row">
+            <span>Insulated Cold Delivery</span>
+            <span id="cart-delivery">₹49</span>
+          </div>
+          <div class="bill-divider"></div>
+          <div class="bill-row grand-total">
+            <span>To Pay</span>
+            <span class="total-figure" id="cart-total">₹0</span>
+          </div>
+        </div>
+
+        <button class="btn btn-dark btn-block btn-lg" id="btn-proceed-checkout" disabled>
+          <span>Proceed to Checkout</span>
+          <span>→</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- CHECKOUT & LIVE ORDER TRACKING MODAL -->
+    <div class="modal-backdrop" id="checkout-modal-backdrop">
+      <div class="checkout-modal-box">
+        <button class="modal-close-btn" id="btn-close-checkout" aria-label="Close dialog">&times;</button>
+        
+        <!-- Screen 1: Order Form -->
+        <div id="checkout-form-screen">
+          <div class="dialog-header">
+            <h3>Delivery Details</h3>
+            <p>Direct from our nearest temperature-controlled kitchen.</p>
+          </div>
+
+          <form id="order-form" class="order-form">
+            <div class="field-grid">
+              <div class="field-item">
+                <label for="input-name">Full Name</label>
+                <input type="text" id="input-name" placeholder="Rohan Mehra" required />
+              </div>
+              <div class="field-item">
+                <label for="input-phone">Phone Number</label>
+                <input type="tel" id="input-phone" placeholder="+91 98765 43210" required />
+              </div>
+            </div>
+
+            <div class="field-item">
+              <label for="input-address">Delivery Address (Apartment / Society / Tech Park)</label>
+              <input type="text" id="input-address" placeholder="Flat 402, Green Glen Layout, Bellandur, Bengaluru" required />
+            </div>
+
+            <div class="field-grid">
+              <div class="field-item">
+                <label for="select-slot">Delivery Preference</label>
+                <select id="select-slot">
+                  <option value="express">Express Delivery (30 mins)</option>
+                  <option value="morning">Morning Slot (Tomorrow 8:00 AM)</option>
+                  <option value="lunch">Lunch Slot (Tomorrow 12:30 PM)</option>
+                </select>
+              </div>
+
+              <div class="field-item">
+                <label for="select-payment">Payment Method</label>
+                <select id="select-payment">
+                  <option value="upi">UPI (Google Pay / PhonePe / Paytm / CRED)</option>
+                  <option value="card">Credit / Debit Card (RuPay, Visa, Master)</option>
+                  <option value="netbanking">Net Banking (SBI, HDFC, ICICI, Axis)</option>
+                  <option value="cod">Cash on Delivery (COD)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-item">
+              <label for="input-notes">Special Instructions (Optional)</label>
+              <input type="text" id="input-notes" placeholder="e.g. Leave with building security, buzz flat 402" />
+            </div>
+
+            <div class="order-review-box">
+              <div class="review-row">
+                <span>Total Items:</span>
+                <span id="checkout-items-summary">0 items</span>
+              </div>
+              <div class="review-row highlight">
+                <span>Final Amount:</span>
+                <span class="pay-amount" id="checkout-amount-summary">₹0</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark btn-block btn-lg" id="btn-submit-order">
+              <span>Place Order & Track Live</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Screen 2: Real-time Dispatch Tracker -->
+        <div id="order-tracking-screen" style="display: none;">
+          <div class="dialog-header text-center">
+            <div class="live-pill">LIVE KITCHEN TRACKER</div>
+            <h3>Order Received & Dispatched</h3>
+            <p id="tracking-order-id">Order #BWL-9842 • Estimated Arrival: <strong>26 mins</strong></p>
+          </div>
+
+          <!-- Progress Stepper -->
+          <div class="tracking-progress-bar">
+            <div class="track-step active" id="step-1">
+              <div class="step-dot"></div>
+              <span class="step-name">Confirmed</span>
+              <span class="step-sub">Order verified</span>
+            </div>
+            <div class="track-connector active" id="line-1"></div>
+            <div class="track-step active" id="step-2">
+              <div class="step-dot"></div>
+              <span class="step-name">Prepping</span>
+              <span class="step-sub">Slicing fresh fruit</span>
+            </div>
+            <div class="track-connector" id="line-2"></div>
+            <div class="track-step" id="step-3">
+              <div class="step-dot"></div>
+              <span class="step-name">En Route</span>
+              <span class="step-sub">Cold-chain delivery</span>
+            </div>
+            <div class="track-connector" id="line-3"></div>
+            <div class="track-step" id="step-4">
+              <div class="step-dot"></div>
+              <span class="step-name">Delivered</span>
+              <span class="step-sub">Enjoy chilled</span>
+            </div>
+          </div>
+
+          <!-- Courier Profile -->
+          <div class="courier-card">
+            <div class="courier-avatar">🛵</div>
+            <div class="courier-meta">
+              <strong>Rahul Sharma</strong>
+              <span>Electric Courier Fleet • 4.98 ★</span>
+            </div>
+            <div class="courier-countdown">
+              <span class="countdown-digits" id="driver-countdown">26:00</span>
+              <span class="countdown-label">mins remaining</span>
+            </div>
+          </div>
+
+          <div class="kitchen-assurance">
+            <p>❄️ Maintained at 4°C in insulated, eco-friendly compostable bowls.</p>
+          </div>
+
+          <button class="btn btn-outline btn-block" id="btn-close-tracking">
+            Close & Back to Store
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast-area" id="toast-container" aria-live="polite"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
